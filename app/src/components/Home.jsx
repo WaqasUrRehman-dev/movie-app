@@ -13,6 +13,8 @@ export default function Home() {
   const [trending, settrending] = useState(null);
   const [category, setcategory] = useState("all");
 
+  console.log(wallpaper)
+
   const getWallpaper = async () => {
     try {
       const { data } = await axios.get("/trending/all/day");
@@ -32,8 +34,6 @@ export default function Home() {
       console.log("Error :", error);
     }
   };
-
-  console.log(trending);
 
   useEffect(() => {
     !wallpaper && getWallpaper();

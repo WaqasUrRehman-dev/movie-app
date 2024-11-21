@@ -1,7 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function SideNav() {
+  const [toggle, settoggle] = useState(false);
+  const upperData = [
+    {
+      title: "Trending",
+      icon: "ri-fire-fill",
+      path: "/trending",
+    },
+    {
+      title: "Popular",
+      icon: "ri-bard-fill",
+      path: "/popular",
+    },
+    {
+      title: "Movie",
+      icon: "ri-movie-2-fill",
+      path: "/movie",
+    },
+    {
+      title: "Tv Show",
+      icon: "ri-tv-2-fill",
+      path: "/tv",
+    },
+    {
+      title: "People",
+      icon: "ri-team-fill",
+      path: "/people",
+    },
+  ];
+
+  const lowerData = [
+    {
+      title: "About Us",
+      icon: "ri-information-fill",
+    },
+    {
+      title: "Contact Us",
+      icon: "ri-phone-fill",
+    },
+  ];
   return (
     <div className="w-[20%] h-full border-r-2 border-zinc-300 p-8">
       <h1 className="text-2xl font-bold text-white">
@@ -12,54 +51,30 @@ export default function SideNav() {
         <h1 className="text-white font-semibold text-xl mt-8 mb-3">
           New Feeds
         </h1>
-        <Link
-          to="/trending"
-          className="hover:bg-[#6556CD] hover:text-white duration-500 rounded-lg xl:p-2 2xl:p-3"
-        >
-          <i className="mr-2 ri-fire-fill"></i>
-          Trending
-        </Link>
-        <Link
-          to="/popular"
-          className="hover:bg-[#6556CD] hover:text-white duration-500 rounded-lg xl:p-2 2xl:p-3"
-        >
-          <i className="mr-2 ri-bard-fill"></i>
-          Popular
-        </Link>
-        <Link
-          to="/movie"
-          className="hover:bg-[#6556CD] hover:text-white duration-500 rounded-lg xl:p-2 2xl:p-3"
-        >
-          <i className="mr-2 ri-movie-2-fill"></i>
-          Movies
-        </Link>
-        <Link
-          to="/tv"
-          className="hover:bg-[#6556CD] hover:text-white duration-500 rounded-lg xl:p-2 2xl:p-3"
-        >
-          <i className="mr-2 ri-tv-2-fill"></i>
-          TV shows
-        </Link>
-        <Link
-          to="/people"
-          className="hover:bg-[#6556CD] hover:text-white duration-500 rounded-lg xl:p-2 2xl:p-3"
-        >
-          <i className="mr-2 ri-team-fill"></i>
-          People
-        </Link>
+        {upperData.map((i, id) => (
+          <Link
+            key={id}
+            to={i.path}
+            className="hover:bg-[#6556CD] hover:text-white duration-500 rounded-lg xl:p-2 2xl:p-3"
+          >
+            <i className={`${i.icon} mr-2`}></i>
+            {i.title}
+          </Link>
+        ))}
 
-      <hr className="border-none h-[1px] bg-zinc-200 mt-4" />
+        <hr className="border-none h-[1px] bg-zinc-200 mt-4" />
         <h1 className="text-white font-semibold text-xl 2xl:mt-8 xl:mt-6 mb-3">
           Website Information
         </h1>
-        <Link className="hover:bg-[#6556CD] hover:text-white duration-500 rounded-lg xl:p-2 2xl:p-3">
-          <i className="mr-2 ri-information-fill"></i>
-          About Us
-        </Link>
-        <Link className="hover:bg-[#6556CD] hover:text-white duration-500 rounded-lg xl:p-2 2xl:p-3">
-          <i className="mr-2 ri-phone-fill"></i>
-          Contact Us
-        </Link>
+        {lowerData.map((t, id) => (
+          <Link
+            key={id}
+            className="hover:bg-[#6556CD] hover:text-white duration-500 rounded-lg xl:p-2 2xl:p-3"
+          >
+            <i className={`${t.icon} mr-2`}></i>
+            {t.title}
+          </Link>
+        ))}
       </nav>
     </div>
   );

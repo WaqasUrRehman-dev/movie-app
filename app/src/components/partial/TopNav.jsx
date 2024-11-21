@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import noImage from "/noImage.jpg"
 
 export default function TopNav() {
-  const [query, setquery] = useState("");
 
+  const [query, setquery] = useState("");
   const [searches, setsearches] = useState([]);
 
   const getSearch = async () => {
@@ -66,7 +66,6 @@ export default function TopNav() {
             </span>
           </Link>
         ))}
-        {/*  */}
       </div>
     </div>
   );
