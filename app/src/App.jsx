@@ -10,6 +10,8 @@ import MovieDetails from "./components/MovieDetails";
 import TvDetails from "./components/TvDetails";
 import PeopleDetails from "./components/PeopleDetails";
 import Trailer from "./components/partial/Trailer";
+import About from "./components/About";
+import Contact from "./components/Contact";
 
 export default function App() {
   return (
@@ -27,6 +29,8 @@ export default function App() {
           <Route path="/tv/details/:id/trailer" element={<Trailer />} />
         </Route>
         <Route path="/people" element={<People />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/people/details/:id" element={<PeopleDetails />} />
       </Routes>
     </div>

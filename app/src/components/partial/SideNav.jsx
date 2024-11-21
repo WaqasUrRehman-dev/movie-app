@@ -35,10 +35,12 @@ export default function SideNav() {
     {
       title: "About Us",
       icon: "ri-information-fill",
+      path: "/about",
     },
     {
       title: "Contact Us",
       icon: "ri-phone-fill",
+      path: "/contact",
     },
   ];
   return (
@@ -68,6 +70,7 @@ export default function SideNav() {
         </h1>
         {lowerData.map((t, id) => (
           <Link
+            to={t.path}
             key={id}
             className="hover:bg-[#6556CD] hover:text-white duration-500 rounded-lg xl:p-2 2xl:p-3"
           >
