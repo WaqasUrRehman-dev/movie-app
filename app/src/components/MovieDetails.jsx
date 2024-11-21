@@ -14,6 +14,7 @@ import Loading from "./Loading";
 export default function MovieDetails() {
   document.title = "Movie App | Movies Details";
   const { info } = useSelector((state) => state.movie);
+  console.log(info);
   const navigate = useNavigate();
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -33,7 +34,9 @@ export default function MovieDetails() {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      className="w-screen h-[165vh] px-[10%] relative"
+      className={`w-screen ${
+        info.watchProvider ? "h-[170vh]" : "h-[150vh]"
+      }  px-[10%] relative`}
     >
       {/* part 1 navigation */}
       <nav className="w-full h-[10vh] flex gap-10 items-center text-zinc-100 text-2xl">

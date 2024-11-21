@@ -1,9 +1,17 @@
 import React from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function About() {
+    const navigate = useNavigate();
   return (
     <div className="w-screen h-screen px-[10%] py-10 overflow-y-auto">
       <div className="max-w-screen-md">
+        <Link>
+          <i
+            onClick={() => navigate(-1)}
+            className="hover:text-[#6556CD] text-3xl text-zinc-500 font-bold ri-arrow-left-line"
+          ></i>
+        </Link>
         <h1 className="text-4xl font-bold mb-5 text-zinc-500">About</h1>
         <p className="text-zinc-400">
           Welcome to our Movie App, your ultimate destination for exploring the
@@ -65,8 +73,8 @@ export default function About() {
         <h1 className="text-4xl font-bold my-5 text-zinc-500">Get In Touch</h1>
         <p className="text-zinc-400">
           Have feedback or suggestions? We’d love to hear from you! Contact us
-          at <a href="#">example@gmail.com</a>. Thank you for visiting Movie App.
-          Let’s make every movie moment unforgettable!
+          at <a href="#">example@gmail.com</a>. Thank you for visiting Movie
+          App. Let’s make every movie moment unforgettable!
         </p>
       </div>
     </div>
