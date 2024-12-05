@@ -134,6 +134,7 @@ export default function PeopleDetails() {
               options={["tv", "movie"]}
               func={(e) => setCategory(e.target.value)}
             />
+            
           </div>
           <div className="w-full h-[50vh] mt-5 list-disc text-zinc-400 overflow-x-hidden overflow-y-auto shadow-lg shadow-[rgba(255,255,255,.3)] border-2 border-zinc-700 p-5">
             {info[category + "Credits"].cast.map((c, i) => (
